@@ -44,7 +44,7 @@ const nextArrow=document.querySelector(".right");
 nextArrow.addEventListener('click',
     function(){
         slides[current].classList.remove('current');
-         if(current==slides.lenght -1 ){
+         if(current==slides.length -1 ){
             current=0
             
         }
@@ -67,21 +67,9 @@ preArrow.addEventListener('click',
             current=current-1
         }
        
-        
+        slides[current].classList.add('current');
         
     }
 )
 
-//CREO ELEMENTO div
-//ASSOCIO CLASSE slide
-//CREO ELEMENTO img
-//ASSOCIO CLASSE images
-//ASSOCIO src
-//APPEND DELLA img NEL div
-//APPEND DEL div NEL carousel
 
-
-//QUANDO SI SCHIACCIA NEXT
-//TOLGO CLASSE CURRENT (che ha display block) DA TUTTE LE SLIDE
-//INCREMENTO IL CONTATORE current
-//ASSOCIO CLASSE CURRENT SOLO ALLA SLIDE CORRENTE (quella di posizione img[current])
