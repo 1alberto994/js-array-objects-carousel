@@ -27,14 +27,9 @@ let current=0;
 for(let i =0;i<img.length;i++){
     if(i==0){
         carosello.innerHTML+= `<div class= "slide current"> <h4>"${img[i].title}"</h4> <p>"${img[i].text}"</p> <img class="images" src="${img[i].image}"> </div>`;
-    }else{
-        carosello.innerHTML+= `<div class= "slide"> <h4>"${img[i].title}"</h4> <p>"${img[i].text}"</p> <img class="images" src="${img[i].image}"> </div>`;
-    }
-}
-for(let i =0;i<img.length;i++){
-    if(i==0){
         thumb.innerHTML+= `<div class= "object">  <img class="images" src="${img[i].image}"> </div>`;
     }else{
+        carosello.innerHTML+= `<div class= "slide"> <h4>"${img[i].title}"</h4> <p>"${img[i].text}"</p> <img class="images" src="${img[i].image}"> </div>`;
         thumb.innerHTML+= `<div class= "object">  <img class="images" src="${img[i].image}"> </div>`;
     }
 }
