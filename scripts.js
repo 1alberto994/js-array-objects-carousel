@@ -21,7 +21,8 @@ const img = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
-const carosello=document.querySelector(".carousel");
+const carosello=document.querySelector(".slides");
+const thumb=document.querySelector(".thumbnails");
 let current=0;
 for(let i =0;i<img.length;i++){
     if(i==0){
@@ -30,31 +31,44 @@ for(let i =0;i<img.length;i++){
         carosello.innerHTML+= `<div class= "slide"> <h4>"${img[i].title}"</h4> <p>"${img[i].text}"</p> <img class="images" src="${img[i].image}"> </div>`;
     }
 }
+for(let i =0;i<img.length;i++){
+    if(i==0){
+        thumb.innerHTML+= `<div class= "object">  <img class="images" src="${img[i].image}"> </div>`;
+    }else{
+        thumb.innerHTML+= `<div class= "object">  <img class="images" src="${img[i].image}"> </div>`;
+    }
+}
 const slides=document.querySelectorAll(".slide");
 const preArrow=document.querySelector(".left");
 const nextArrow=document.querySelector(".right");
 nextArrow.addEventListener('click',
     function(){
         slides[current].classList.remove('current');
-        current++;
-        slides[current].classList.add('current');
-        if(current==slides.lenght -1 ){
-            preArrow.classList.add("hidden");
+         if(current==slides.lenght -1 ){
+            current=0
+            
         }
         else{
-            nextArrow.classList.remove("hidden");
+            current=current +1
         }
+        
+        slides[current].classList.add('current');
+        
+       
     }
 )
 preArrow.addEventListener('click',
     function(){
         slides[current].classList.remove('current');
-        current--;
-        slides[current].classList.add('current');
-        if(current==slides.lenght +1){
-            preArrow.classList.add("hidden");
+        if(current==0){
+            current=slides.length -1
         }
-        nextArrow.classList.remove("hidden");
+        else{
+            current=current-1
+        }
+       
+        
+        
     }
 )
 
